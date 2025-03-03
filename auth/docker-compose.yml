@@ -12,5 +12,5 @@ services:
     volumes:
       - ./postgres/auth:/data/postgres
     ports:
-      - "5432:5432"
+      - "5435:5432"
     restart: always
