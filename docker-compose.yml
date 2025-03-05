@@ -10,6 +10,8 @@ services:
       - product-service
     environment:
       - JWT_SECRET=${JWT_SECRET}
+      - AUTH_SERVICE_URL=http://auth-service:4000
+      - PRODUCT_SERVICE_URL=http://product-service:5000
     networks:
       - backend
 

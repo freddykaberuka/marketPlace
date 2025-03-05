@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Confirmation</title>
+</head>
+<body style="font-family: Arial, sans-serif; padding: 20px;">
+    <h2>Order Confirmation</h2>
+    <p>Hello {{customerName}},</p>
+    <p>Thank you for your order. Here are your order details:</p>
+    <ul>
+        <li><strong>Order ID:</strong> {{orderId}}</li>
+        <li><strong>Product:</strong> {{productName}}</li>
+        <li><strong>Quantity:</strong> {{quantity}}</li>
+        <li><strong>Total Price:</strong> ${{totalPrice}}</li>
+    </ul>
+    <p>We will notify you when your order status changes.</p>
+    <p>Best regards,</p>
+    <p><strong>The Marketplace Team</strong></p>
+</body>
+</html>
