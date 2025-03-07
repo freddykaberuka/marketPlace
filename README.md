@@ -29,8 +29,6 @@
 
 # 📖 [Awesome MarketPlace] <a name="about-project"></a>
 
-> Describe your project in 1 or 2 sentences.
-
 **[Awesome MarketPlace]** is a RESTful API for an online marketplace that allows users to buy and sell products, 
 manage their inventory and process orders.
 
