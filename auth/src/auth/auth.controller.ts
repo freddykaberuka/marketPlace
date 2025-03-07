@@ -16,10 +16,15 @@ import { LoginDto, LoginResultDto } from "./dto/login.dto";
 import { RegisterDto } from "./dto/register.dto";
 import JwtRefreshGuard from "./guards/jwt-refresh.guard";
 import { ResponseDto } from "../_shared/dto/response.dto";
+import { MessagePattern, Payload } from "@nestjs/microservices";
+import { JwtService } from '@nestjs/jwt';
+
 
 @Controller("auth")
 export class AuthController {
-  constructor(private readonly authService: AuthService) {}
+  constructor(
+    private readonly authService: AuthService,
+    private readonly jwtService: JwtService,) {}
 
   @Post("register")
   async register(@Body() dto: RegisterDto): Promise<ResponseDto> {
@@ -47,5 +52,15 @@ export class AuthController {
   async verifyUser(@Query("token") token): Promise<LoginResultDto> {
     const { accessToken, refreshToken } = await this.authService.verify(token);
     return new LoginResultDto(accessToken, refreshToken);
+  }
+
+  @MessagePattern({ cmd: "validate-token" }) 
+  validateToken(@Payload() token: string) {
+    try {
+      const decoded = this.jwtService.verify(token);
+      return { valid: true, user: decoded };
+    } catch (error) {
+      return { valid: false };
+    }
   }
 }

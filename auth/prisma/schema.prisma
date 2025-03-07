@@ -11,6 +11,20 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
+model User {
+  id           Int       @id @default(autoincrement())
+  createdAt    DateTime  @default(now())
+  deletedAt    DateTime?
+  refreshToken String?
+  email        String    @unique
+  username     String    @unique
+  password     String?
+  role         String    @default("CUSTOMER")
+  status       String    @default("NEW")
+
+  profile   UserProfile?
+}
+
 model UserProfile {
   id        Int       @id @default(autoincrement())
   createdAt DateTime  @default(now())
@@ -25,16 +39,3 @@ model UserProfile {
   userId Int   @unique
 }
 
-model User {
-  id           Int       @id @default(autoincrement())
-  createdAt    DateTime  @default(now())
-  deletedAt    DateTime?
-  refreshToken String?
-  email        String    @unique
-  username     String    @unique
-  password     String?
-  role         String    @default("CUSTOMER")
-  status       String    @default("NEW")
-
-  profile   UserProfile?
-}
