@@ -27,7 +27,7 @@
 
 <!-- PROJECT DESCRIPTION -->
 
-# 📖 [your_project_name] <a name="about-project"></a>
+# 📖 [Awesome MarketPlace] <a name="about-project"></a>
 
 > Describe your project in 1 or 2 sentences.
 
@@ -50,6 +50,9 @@ manage their inventory and process orders.
   </ul>
   <ul>
     <li><a href="#">NodeMailer</a></li>
+  </ul>
+  <ul>
+    <li><a href="#">Docker</a></li>
   </ul>
 </details>
 
@@ -136,7 +139,7 @@ To run the project, execute the following command:
 
 👤 **Author**
 
-- GitHub: [@githubhandle](https://github.com/freddykaberuka)
+- GitHub: [@Freddykaberuka](https://github.com/freddykaberuka)
 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
